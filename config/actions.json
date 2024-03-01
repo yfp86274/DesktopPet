@@ -1,0 +1,25 @@
+{
+  "actions": [
+    {
+      "name": "walk",
+      "images": [
+        "../images/shime1.png",
+        "../images/shime2.png",
+        "../images/shime1.png",
+        "../images/shime3.png"
+      ],
+      "duration": 10000,
+      "interval": 100
+    },
+    {
+      "name": "run",
+      "images": [
+        "../images/shime4.png",
+        "../images/shime5.png"
+      ],
+      "duration": 5000,
+      "interval": 100
+    }
+  ]
+}
+

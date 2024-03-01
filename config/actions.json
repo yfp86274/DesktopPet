@@ -9,7 +9,44 @@
         "../images/shime3.png"
       ],
       "duration": 10000,
-      "interval": 100
+      "interval": 100,
+      "speeds": [
+        {
+          "speed": [
+            1,
+            0
+          ],
+          "duration": 2000
+        },
+        {
+          "speed": [
+            2,
+            0
+          ],
+          "duration": 2000
+        },
+        {
+          "speed": [
+            0,
+            0
+          ],
+          "duration": 2000
+        },
+        {
+          "speed": [
+            0,
+            0
+          ],
+          "duration": 2000
+        },
+        {
+          "speed": [
+            0,
+            1
+          ],
+          "duration": 2000
+        }
+      ]
     },
     {
       "name": "run",
@@ -18,8 +55,23 @@
         "../images/shime5.png"
       ],
       "duration": 5000,
-      "interval": 100
+      "interval": 100,
+      "speeds": [
+        {
+          "speed": [
+            2,
+            0
+          ],
+          "duration": 2500
+        },
+        {
+          "speed": [
+            0,
+            1
+          ],
+          "duration": 2500
+        }
+      ]
     }
   ]
 }
-

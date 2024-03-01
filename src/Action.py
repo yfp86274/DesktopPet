@@ -7,12 +7,13 @@ from PyQt6.QtGui import QPixmap
 
 
 class Action:
-    def __init__(self, name, images, duration, interval):
+    def __init__(self, name, images, duration, interval, speeds):
         self.name = name
         self.image_cycle = cycle(QPixmap(fname).scaled(128, 128, Qt.AspectRatioMode.IgnoreAspectRatio,
                                                        Qt.TransformationMode.SmoothTransformation) for fname in images)
         self.duration = duration
         self.interval = interval
+        self.speeds = cycle(speeds)  # speeds is now a list of speed objects
 
     @staticmethod
     def load_from_file(filename):

@@ -1,9 +1,8 @@
-# image_widget.py
 import configparser
 import random
 
 from PyQt6.QtCore import QTimer, Qt, QPoint, QProcess
-from PyQt6.QtGui import QMouseEvent, QAction
+from PyQt6.QtGui import QMouseEvent, QAction, QGuiApplication
 from PyQt6.QtWidgets import QLabel, QVBoxLayout, QWidget, QMenu
 
 
@@ -25,6 +24,7 @@ class ImageWidget(QWidget):
 
         self.actions = actions
         self.current_action = random.choice(self.actions)
+        self.current_speed = next(self.current_action.speeds)
 
         self.image_timer = QTimer(self)
         self.image_timer.timeout.connect(self.next_image)
@@ -33,6 +33,14 @@ class ImageWidget(QWidget):
         self.action_timer = QTimer(self)
         self.action_timer.timeout.connect(self.next_action)
         self.action_timer.start(self.current_action.duration)
+
+        self.speed_timer = QTimer(self)  # new timer for changing the speed
+        self.speed_timer.timeout.connect(self.next_speed)
+        self.speed_timer.start(self.current_speed['duration'])
+
+        self.move_timer = QTimer(self)  # new timer for moving the window
+        self.move_timer.timeout.connect(self.move_window)
+        self.move_timer.start(100)  # update the window position every 100 ms
 
         self.oldPos = self.pos()
 
@@ -46,6 +54,25 @@ class ImageWidget(QWidget):
         self.current_action = random.choice(self.actions)
         self.image_timer.start(self.current_action.interval)
         self.action_timer.start(self.current_action.duration)
+        self.current_speed = next(self.current_action.speeds)
+        self.speed_timer.start(self.current_speed['duration'])
+
+    def next_speed(self):
+        self.current_speed = next(self.current_action.speeds)
+        self.speed_timer.start(self.current_speed['duration'])
+
+    def move_window(self):
+        # Get the current position and screen size
+        pos = self.pos()
+        screen = QGuiApplication.primaryScreen()
+        rect = screen.availableGeometry()
+
+        # Calculate the new position
+        newPos = pos + QPoint(*self.current_speed['speed'])
+
+        # Check if the new position is within the screen bounds
+        if rect.contains(newPos):
+            self.move(newPos)
 
     def mousePressEvent(self, event: QMouseEvent):
         if event.button() == Qt.MouseButton.RightButton:

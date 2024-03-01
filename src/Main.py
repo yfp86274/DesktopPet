@@ -52,7 +52,15 @@ class ImageWidget(QWidget):
 
     def showContextMenu(self, event):
         contextMenu = QMenu(self)
-        contextMenu.setStyleSheet("background-color: white; color: black;")  # set menu style
+        contextMenu.setStyleSheet("""
+            QMenu {
+                background-color: white; 
+                color: black;
+            }
+            QMenu::item:selected {
+                background-color: lightblue;
+            }
+        """)  # set menu style
 
         for section in self.config.sections():
             for key in self.config[section]:

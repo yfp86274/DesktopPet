@@ -24,7 +24,9 @@ class ImageWidget(QWidget):
 
         self.actions = actions
         self.sequences = sequences
-        self.current_action = random.choice(list(self.actions.values()))
+        self.current_sequence_name = 'normal'  # 默認的序列名稱
+        self.current_action_index = 0
+        self.current_action = self.get_random_action_from_sequence(self.sequences[self.current_sequence_name])  # 默認序列隨機
         self.current_speed = next(self.current_action.speeds)
 
         self.image_timer = QTimer(self)
@@ -52,11 +54,28 @@ class ImageWidget(QWidget):
         self.label.setPixmap(next(self.current_action.image_cycle))
 
     def next_action(self):
-        self.current_action = random.choice(list(self.actions.values()))
+        sequence = self.sequences[self.current_sequence_name]
+        if sequence['mode'] == 'sequential':
+            self.current_action_index = (self.current_action_index + 1) % len(sequence['actions'])
+            if self.current_action_index == 0:  # 如果已經播放完畢
+                self.current_sequence_name = sequence.get('next', self.current_sequence_name)  # 切換到下一個序列
+        elif sequence['mode'] == 'random':
+            self.current_action_index = random.randint(0, len(sequence['actions']) - 1)
+        action_name = sequence['actions'][self.current_action_index]
+        self.current_action = self.actions[action_name]
         self.image_timer.start(self.current_action.interval)
         self.action_timer.start(self.current_action.duration)
         self.current_speed = next(self.current_action.speeds)
         self.speed_timer.start(self.current_speed['duration'])
+
+    def get_random_action_from_sequence(self, sequence):
+        action_names = sequence['actions']
+        action_objects = [self.actions[name] for name in action_names]
+        return random.choice(action_objects)
+
+    def set_sequence_by_name(self, name):
+        self.current_sequence_name = name
+        self.next_action()
 
     def next_speed(self):
         self.current_speed = next(self.current_action.speeds)
@@ -87,7 +106,7 @@ class ImageWidget(QWidget):
         self.oldPos = event.globalPosition().toPoint()
 
     def mouseReleaseEvent(self, event: QMouseEvent):  # 滑鼠放開事件
-        pass
+        self.set_sequence_by_name("wait")
 
     def showContextMenu(self, event):
         contextMenu = QMenu(self)

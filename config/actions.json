@@ -71,5 +71,29 @@
           "duration": 2500
         }
       ]
-    }
+    },
+  "wait": {
+    "images": [
+      "../images/shime5.png",
+      "../images/shime6.png"
+    ],
+    "duration": 5000,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 2500
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 2500
+      }
+    ]
+  }
 }

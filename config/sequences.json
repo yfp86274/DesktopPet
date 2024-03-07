@@ -6,7 +6,8 @@
       "walk",
       "run"
     ],
-    "mode": "sequential"
+    "mode": "sequential",
+    "next": "run"
   },
   "run": {
     "actions": [
@@ -15,11 +16,20 @@
       "run",
       "run"
     ],
-    "mode": "sequential"
+    "mode": "sequential",
+    "next": "walk"
+  },
+  "wait": {
+    "actions": [
+      "wait"
+    ],
+    "mode": "sequential",
+    "next": "normal"
   },
   "normal": {
     "actions": [
-      "walk"
+      "walk",
+      "wait"
     ],
     "mode": "random"
   }

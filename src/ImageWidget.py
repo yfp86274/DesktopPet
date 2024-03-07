@@ -24,7 +24,7 @@ class ImageWidget(QWidget):
 
         self.actions = actions
         self.sequences = sequences
-        self.current_action = random.choice(self.actions)
+        self.current_action = random.choice(list(self.actions.values()))
         self.current_speed = next(self.current_action.speeds)
 
         self.image_timer = QTimer(self)
@@ -52,7 +52,7 @@ class ImageWidget(QWidget):
         self.label.setPixmap(next(self.current_action.image_cycle))
 
     def next_action(self):
-        self.current_action = random.choice(self.actions)
+        self.current_action = random.choice(list(self.actions.values()))
         self.image_timer.start(self.current_action.interval)
         self.action_timer.start(self.current_action.duration)
         self.current_speed = next(self.current_action.speeds)

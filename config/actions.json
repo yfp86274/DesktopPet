@@ -1,7 +1,6 @@
 {
-  "actions": [
+  "walk":
     {
-      "name": "walk",
       "images": [
         "../images/shime1.png",
         "../images/shime2.png",
@@ -48,8 +47,8 @@
         }
       ]
     },
+  "run":
     {
-      "name": "run",
       "images": [
         "../images/shime4.png",
         "../images/shime5.png"
@@ -73,5 +72,4 @@
         }
       ]
     }
-  ]
 }

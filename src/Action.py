@@ -1,4 +1,4 @@
-# action.py
+# Action.py
 import json
 from itertools import cycle
 
@@ -16,7 +16,13 @@ class Action:
         self.speeds = cycle(speeds)  # speeds is now a list of speed objects
 
     @staticmethod
-    def load_from_file(filename):
+    def load_actions_from_file(filename):
         with open(filename) as f:
             actions_data = json.load(f)
         return [Action(**action_data) for action_data in actions_data['actions']]
+
+    @staticmethod
+    def load_sequences_from_file(filename):
+        with open(filename) as f:
+            sequences_data = json.load(f)
+        return sequences_data

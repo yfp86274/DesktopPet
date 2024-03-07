@@ -7,7 +7,7 @@ from PyQt6.QtWidgets import QLabel, QVBoxLayout, QWidget, QMenu
 
 
 class ImageWidget(QWidget):
-    def __init__(self, actions, config_file):
+    def __init__(self, actions, sequences, config_file):
         super().__init__()
         self.setWindowTitle('PyQt6')
         self.setGeometry(100, 100, 128, 128)
@@ -23,6 +23,7 @@ class ImageWidget(QWidget):
         self.layout.addWidget(self.label)
 
         self.actions = actions
+        self.sequences = sequences
         self.current_action = random.choice(self.actions)
         self.current_speed = next(self.current_action.speeds)
 
@@ -74,16 +75,19 @@ class ImageWidget(QWidget):
         if rect.contains(newPos):
             self.move(newPos)
 
-    def mousePressEvent(self, event: QMouseEvent):
+    def mousePressEvent(self, event: QMouseEvent):  # 滑鼠點擊事件
         if event.button() == Qt.MouseButton.RightButton:
             self.showContextMenu(event)
         else:
             self.oldPos = event.globalPosition().toPoint()
 
-    def mouseMoveEvent(self, event: QMouseEvent):
+    def mouseMoveEvent(self, event: QMouseEvent):  # 滑鼠移動事件
         delta = QPoint(event.globalPosition().toPoint() - self.oldPos)
         self.move(self.x() + delta.x(), self.y() + delta.y())
         self.oldPos = event.globalPosition().toPoint()
+
+    def mouseReleaseEvent(self, event: QMouseEvent):  # 滑鼠放開事件
+        pass
 
     def showContextMenu(self, event):
         contextMenu = QMenu(self)

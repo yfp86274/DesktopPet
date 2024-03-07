@@ -1,0 +1,26 @@
+{
+  "walk": {
+    "actions": [
+      "walk",
+      "run",
+      "walk",
+      "run"
+    ],
+    "mode": "sequential"
+  },
+  "run": {
+    "actions": [
+      "run",
+      "run",
+      "run",
+      "run"
+    ],
+    "mode": "sequential"
+  },
+  "normal": {
+    "actions": [
+      "walk"
+    ],
+    "mode": "random"
+  }
+}

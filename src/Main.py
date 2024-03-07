@@ -1,4 +1,4 @@
-# main.py
+# Main.py
 import sys
 
 from PyQt6.QtWidgets import QApplication
@@ -9,8 +9,9 @@ from ImageWidget import ImageWidget
 
 def main():
     app = QApplication(sys.argv)
-    actions = Action.load_from_file('../config/actions.json')
-    window = ImageWidget(actions, "../config/menu.txt")
+    actions = Action.load_actions_from_file('../config/actions.json')
+    sequences = Action.load_sequences_from_file('../config/sequences.json')
+    window = ImageWidget(actions, sequences, "../config/menu.txt")
     window.show()
     sys.exit(app.exec())
 

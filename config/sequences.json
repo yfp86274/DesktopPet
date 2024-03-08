@@ -7,30 +7,39 @@
       "run"
     ],
     "mode": "sequential",
-    "next": "run"
+    "next": "wait"
   },
   "run": {
     "actions": [
-      "run",
-      "run",
-      "run",
-      "run"
+      "sit",
+      "sit_and_look_up"
     ],
     "mode": "sequential",
     "next": "walk"
   },
   "wait": {
     "actions": [
-      "wait"
+      "sit_and_look_up_at_mouse"
     ],
     "mode": "sequential",
     "next": "normal"
   },
   "normal": {
     "actions": [
-      "walk",
-      "wait"
+      "crawl_on_ceiling",
+      "hang_on_ceiling",
+      "climb_wall",
+      "hang_on_wall",
+      "crawl"
     ],
     "mode": "random"
+  },
+  "mouseRelease": {
+    "actions": [
+      "swing_legs",
+      "sit_with_legs_down"
+    ],
+    "mode": "sequential",
+    "next": "run"
   }
 }

@@ -1,83 +1,89 @@
 {
-  "walk":
-    {
-      "images": [
-        "../images/shime1.png",
-        "../images/shime2.png",
-        "../images/shime1.png",
-        "../images/shime3.png"
-      ],
-      "duration": 10000,
-      "interval": 100,
-      "speeds": [
-        {
-          "speed": [
-            1,
-            0
-          ],
-          "duration": 2000
-        },
-        {
-          "speed": [
-            2,
-            0
-          ],
-          "duration": 2000
-        },
-        {
-          "speed": [
-            0,
-            0
-          ],
-          "duration": 2000
-        },
-        {
-          "speed": [
-            0,
-            0
-          ],
-          "duration": 2000
-        },
-        {
-          "speed": [
-            0,
-            1
-          ],
-          "duration": 2000
-        }
-      ]
-    },
-  "run":
-    {
-      "images": [
-        "../images/shime4.png",
-        "../images/shime5.png"
-      ],
-      "duration": 5000,
-      "interval": 100,
-      "speeds": [
-        {
-          "speed": [
-            2,
-            0
-          ],
-          "duration": 2500
-        },
-        {
-          "speed": [
-            0,
-            1
-          ],
-          "duration": 2500
-        }
-      ]
-    },
-  "wait": {
+  "walk": {
     "images": [
-      "../images/shime5.png",
-      "../images/shime6.png"
+      "../images/shime1.png",
+      "../images/shime2.png",
+      "../images/shime1.png",
+      "../images/shime3.png"
     ],
-    "duration": 5000,
+    "duration": 2400,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          -2,
+          0
+        ],
+        "duration": 600
+      },
+      {
+        "speed": [
+          -2,
+          0
+        ],
+        "duration": 600
+      },
+      {
+        "speed": [
+          -2,
+          0
+        ],
+        "duration": 600
+      },
+      {
+        "speed": [
+          -2,
+          0
+        ],
+        "duration": 600
+      }
+    ]
+  },
+  "run": {
+    "images": [
+      "../images/shime1.png",
+      "../images/shime2.png",
+      "../images/shime1.png",
+      "../images/shime3.png"
+    ],
+    "duration": 800,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          -4,
+          0
+        ],
+        "duration": 200
+      },
+      {
+        "speed": [
+          -4,
+          0
+        ],
+        "duration": 200
+      },
+      {
+        "speed": [
+          -4,
+          0
+        ],
+        "duration": 200
+      },
+      {
+        "speed": [
+          -4,
+          0
+        ],
+        "duration": 200
+      }
+    ]
+  },
+  "sit": {
+    "images": [
+      "../images/shime11.png"
+    ],
+    "duration": 25000,
     "interval": 100,
     "speeds": [
       {
@@ -85,14 +91,431 @@
           0,
           0
         ],
-        "duration": 2500
+        "duration": 25000
+      }
+    ]
+  },
+  "sit_and_look_up": {
+    "images": [
+      "../images/shime26.png"
+    ],
+    "duration": 25000,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 25000
+      }
+    ]
+  },
+  "sit_and_look_up_at_mouse": {
+    "images": [
+      "../images/shime26.png",
+      "../images/shime11.png"
+    ],
+    "duration": 25000,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 12500
       },
       {
         "speed": [
           0,
           0
         ],
-        "duration": 2500
+        "duration": 12500
+      }
+    ]
+  },
+  "sit_and_turn_head": {
+    "images": [
+      "../images/shime26.png",
+      "../images/shime15.png",
+      "../images/shime27.png",
+      "../images/shime16.png",
+      "../images/shime28.png",
+      "../images/shime17.png",
+      "../images/shime29.png",
+      "../images/shime11.png"
+    ],
+    "duration": 4000,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 500
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 500
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 500
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 500
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 500
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 500
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 500
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 500
+      }
+    ]
+  },
+  "sit_comfortably": {
+    "images": [
+      "../images/shime30.png"
+    ],
+    "duration": 25000,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 25000
+      }
+    ]
+  },
+  "sit_with_legs_down": {
+    "images": [
+      "../images/shime31.png"
+    ],
+    "duration": 25000,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 25000
+      }
+    ]
+  },
+  "swing_legs": {
+    "images": [
+      "../images/shime31.png",
+      "../images/shime32.png",
+      "../images/shime31.png",
+      "../images/shime33.png"
+    ],
+    "duration": 4000,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 500
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 1500
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 500
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 1500
+      }
+    ]
+  },
+  "lie_down": {
+    "images": [
+      "../images/shime21.png"
+    ],
+    "duration": 25000,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 25000
+      }
+    ]
+  },
+  "crawl": {
+    "images": [
+      "../images/shime20.png",
+      "../images/shime20.png",
+      "../images/shime21.png",
+      "../images/shime21.png",
+      "../images/shime21.png"
+    ],
+    "duration": 5600,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 2800
+      },
+      {
+        "speed": [
+          -2,
+          0
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          -2,
+          0
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          -1,
+          0
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 2400
+      }
+    ]
+  },
+  "hang_on_ceiling": {
+    "images": [
+      "../images/shime23.png"
+    ],
+    "duration": 25000,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 25000
+      }
+    ]
+  },
+  "crawl_on_ceiling": {
+    "images": [
+      "../images/shime25.png",
+      "../images/shime25.png",
+      "../images/shime23.png",
+      "../images/shime24.png",
+      "../images/shime24.png",
+      "../images/shime24.png",
+      "../images/shime23.png",
+      "../images/shime25.png"
+    ],
+    "duration": 6400,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 1600
+      },
+      {
+        "speed": [
+          -1,
+          0
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          -1,
+          0
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          -1,
+          0
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 1600
+      },
+      {
+        "speed": [
+          -2,
+          0
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          -2,
+          0
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          -2,
+          0
+        ],
+        "duration": 400
+      }
+    ]
+  },
+  "hang_on_wall": {
+    "images": [
+      "../images/shime13.png"
+    ],
+    "duration": 25000,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 25000
+      }
+    ]
+  },
+  "climb_wall": {
+    "images": [
+      "../images/shime14.png",
+      "../images/shime14.png",
+      "../images/shime12.png",
+      "../images/shime13.png",
+      "../images/shime13.png",
+      "../images/shime13.png",
+      "../images/shime12.png",
+      "../images/shime14.png"
+    ],
+    "duration": 6400,
+    "interval": 100,
+    "speeds": [
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 1600
+      },
+      {
+        "speed": [
+          0,
+          -1
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          0,
+          -1
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          0,
+          -1
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          0,
+          0
+        ],
+        "duration": 1600
+      },
+      {
+        "speed": [
+          0,
+          -2
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          0,
+          -2
+        ],
+        "duration": 400
+      },
+      {
+        "speed": [
+          0,
+          -2
+        ],
+        "duration": 400
       }
     ]
   }

@@ -106,7 +106,7 @@ class ImageWidget(QWidget):
         self.oldPos = event.globalPosition().toPoint()
 
     def mouseReleaseEvent(self, event: QMouseEvent):  # 滑鼠放開事件
-        self.set_sequence_by_name("wait")
+        self.set_sequence_by_name("mouseRelease")
 
     def showContextMenu(self, event):
         contextMenu = QMenu(self)
